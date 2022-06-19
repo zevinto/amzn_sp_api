@@ -1,0 +1,6 @@
+# AmznSpApi::FulfillmentInboundApiModel::PrepGuidance
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+

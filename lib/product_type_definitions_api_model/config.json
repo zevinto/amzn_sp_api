@@ -1,0 +1,9 @@
+{
+  "gemName": "product_type_definitions_api_model",
+  "moduleName": "AmznSpApi::ProductTypeDefinitionsApiModel",
+  "gemVersion": "0.1.0",
+  "gemAuthor": "Aarontzf",
+  "gemAuthorEmail": "aarontzf@163.com",
+  "gemHomepage": "https://github.com/Aarontzf/amzn_sp_api",
+  "gemLicense": "MIT"
+}

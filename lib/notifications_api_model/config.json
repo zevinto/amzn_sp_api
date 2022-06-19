@@ -1,0 +1,9 @@
+{
+  "gemName": "notifications_api_model",
+  "moduleName": "AmznSpApi::NotificationsApiModel",
+  "gemVersion": "0.1.0",
+  "gemAuthor": "Aarontzf",
+  "gemAuthorEmail": "aarontzf@163.com",
+  "gemHomepage": "https://github.com/Aarontzf/amzn_sp_api",
+  "gemLicense": "MIT"
+}
