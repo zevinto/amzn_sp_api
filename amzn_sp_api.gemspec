@@ -1,18 +1,18 @@
-require_relative "lib/amzn_sp_api/amzn_sp_api_version.rb"
+require_relative 'lib/amzn_sp_api/amzn_sp_api_version.rb'
 
 Gem::Specification.new do |spec|
-  spec.name = "amzn_sp_api"
+  spec.name = 'amzn_sp_api'
   spec.version = AmznSpApi::VERSION
-  spec.authors = ["zevinto"]
-  spec.email = ["aarontzf@163.com"]
+  spec.authors = ['zevinto']
+  spec.email = ['aarontzf@163.com']
 
-  spec.summary = "Ruby Gem for Amazon Selling Partner API (SP-API)."
-  spec.description = "Ruby Gem for Amazon Selling Partner API (SP-API)."
-  spec.homepage = "https://github.com/zevinto/amzn_sp_api"
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.summary = 'Ruby Gem for Amazon Selling Partner API (SP-API).'
+  spec.description = 'Ruby Gem for Amazon Selling Partner API (SP-API).'
+  spec.homepage = 'https://github.com/zevinto/amzn_sp_api'
+  spec.license = 'MIT'
+  spec.required_ruby_version = '>= 2.6.0'
 
-  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata['homepage_uri'] = spec.homepage
 
   spec.add_runtime_dependency 'aws-sdk-sts', '~> 1.9'
   spec.add_runtime_dependency 'aws-sigv4', '~> 1.5'
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.bindir = "exe"
+  spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 end
