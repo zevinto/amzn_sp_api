@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'aws-sigv4'
 
 require 'amzn_sp_api/api_error'

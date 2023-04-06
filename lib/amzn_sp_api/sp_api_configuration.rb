@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'amzn_sp_api/configuration'
 
 module AmznSpApi

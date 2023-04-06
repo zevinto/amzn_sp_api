@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'amzn_sp_api/amzn_sp_api_version'
 require 'amzn_sp_api/api_error'
 require 'amzn_sp_api/sp_api_client'
