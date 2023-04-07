@@ -13,12 +13,12 @@ for FILE in $(find ../amzn_sp_api/models -name "*.json"); do
     rm -r "$tempPath"
   fi
 
-  cp config.json lib/"$API_NAME"
-  sed -i "s/GEMNAME/$API_NAME/g" lib/"$API_NAME"/config.json
-  sed -i "s/MODULENAME/$MODULE_NAME/g" lib/"$API_NAME"/config.json
+  cp config.json lib/$API_NAME
+  sed -i '' "s/GEMNAME/$API_NAME/g" lib/$API_NAME/config.json
+  sed -i '' "s/MODULENAME/$MODULE_NAME/g" lib/"$API_NAME"/config.json
 
   # Windows
-  java -jar swagger-codegen-cli.jar generate -i "$FILE" -l ruby -c lib/"$API_NAME"/config.json -o lib/"$API_NAME"
+#  java -jar swagger-codegen-cli.jar generate -i "$FILE" -l ruby -c lib/"$API_NAME"/config.json -o lib/"$API_NAME"
   # Mac
   swagger-codegen generate -i "$FILE" -l ruby -c lib/"$API_NAME"/config.json -o lib/"$API_NAME"
 

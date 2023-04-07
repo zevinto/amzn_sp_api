@@ -1,9 +1,9 @@
 {
   "gemName": "fulfillment_outbound_api_model",
   "moduleName": "AmznSpApi::FulfillmentOutboundApiModel",
-  "gemVersion": "0.1.0",
-  "gemAuthor": "Aarontzf",
+  "gemVersion": "1.0.0",
+  "gemAuthor": "Zevinto",
   "gemAuthorEmail": "aarontzf@163.com",
-  "gemHomepage": "https://github.com/Aarontzf/amzn_sp_api",
+  "gemHomepage": "https://github.com/zevinto/amzn_sp_api",
   "gemLicense": "MIT"
 }

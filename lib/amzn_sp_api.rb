@@ -24,10 +24,10 @@ module AmznSpApi
 
     def decrypt_and_inflate_document(ciphertext, document_response_payload)
       body = if cipher = document_cipher(document_response_payload, encrypt: false)
-               cipher.update(ciphertext) + cipher.final
-             else
-               ciphertext
-             end
+        cipher.update(ciphertext) + cipher.final
+      else
+        ciphertext
+      end
 
       inflate_document(body, document_response_payload)
     end
@@ -50,7 +50,7 @@ module AmznSpApi
                    OpenSSL::Cipher.new("AES-#{key.size * 8}-CBC")
                  else
                    raise AmznSpApi::ApiError, "unknown encryption standard #{response.inspect}"
-                 end
+        end
 
         encrypt ? cipher.encrypt : cipher.decrypt
         cipher.key = key

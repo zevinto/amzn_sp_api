@@ -133,7 +133,7 @@ module AmznSpApi
                         value
                       else
                         value.to_s
-                      end
+          end
         end
       elsif body
         data = body.is_a?(String) ? body : body.to_json
@@ -345,10 +345,10 @@ module AmznSpApi
 
       local_body = nil
       local_body = if model.is_a?(Array)
-                     model.map { |m| object_to_hash(m) }
-                   else
-                     object_to_hash(model)
-                   end
+        model.map { |m| object_to_hash(m) }
+      else
+        object_to_hash(model)
+      end
       local_body.to_json
     end
 

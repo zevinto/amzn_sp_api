@@ -39,10 +39,10 @@ module AmznSpApi
 
     def message
       msg = if @message.nil?
-              'Error message: the server returns an error'
-            else
-              @message
-            end
+        'Error message: the server returns an error'
+      else
+        @message
+      end
 
       msg += "\nHTTP status code: #{code}" if code
       msg += "\nResponse headers: #{response_headers}" if response_headers

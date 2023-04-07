@@ -14,11 +14,7 @@ AllCops:
 Style/AndOr:
   Enabled: true
 
-# Do not use braces for hash literals when they are the last argument of a
-# method call.
-Style/BracesAroundHashParameters:
-  Enabled: true
-  EnforcedStyle: context_dependent
+
 
 # Align `when` with `case`.
 Layout/CaseIndentation:
@@ -57,7 +53,7 @@ Style/HashSyntax:
 # extra level of indentation.
 Layout/IndentationConsistency:
   Enabled: true
-  EnforcedStyle: rails
+  
 
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
@@ -96,7 +92,6 @@ Style/MethodDefParentheses:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-  EnforcedStyle: always
 
 # Use `foo {}` not `foo{}`.
 Layout/SpaceBeforeBlockBraces:
@@ -119,11 +114,11 @@ Layout/SpaceInsideParens:
 #  EnforcedStyle: single_quotes
 
 # Detect hard tabs, no hard tabs.
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: true
 
 # Blank lines should not have any spaces.
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: true
 
 # No trailing whitespace.
@@ -131,7 +126,7 @@ Layout/TrailingWhitespace:
   Enabled: false
 
 # Use quotes for string literals when they are enough.
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: true
 
 # Align `end` with the matching keyword or starting expression except for
@@ -152,3 +147,24 @@ Style/RedundantReturn:
 Style/Semicolon:
   Enabled: true
   AllowAsExpressionSeparator: true
+
+Style/AsciiComments:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+Style/Documentation:
+  Enabled: false
+Style/EmptyElse:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/ZeroLengthPredicate:
+  Enabled: false
+Layout/LineLength:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false

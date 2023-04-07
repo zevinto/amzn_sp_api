@@ -187,8 +187,7 @@ module AmznSpApi
 
     # Returns Auth Settings hash for api client.
     def auth_settings
-      {
-      }
+      {}
     end
   end
 end

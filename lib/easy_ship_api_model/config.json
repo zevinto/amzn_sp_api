@@ -1,0 +1,9 @@
+{
+  "gemName": "easy_ship_api_model",
+  "moduleName": "AmznSpApi::EasyShipApiModel",
+  "gemVersion": "1.0.0",
+  "gemAuthor": "Zevinto",
+  "gemAuthorEmail": "aarontzf@163.com",
+  "gemHomepage": "https://github.com/zevinto/amzn_sp_api",
+  "gemLicense": "MIT"
+}
