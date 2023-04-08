@@ -1,4 +1,4 @@
-require_relative 'lib/amzn_sp_api/amzn_sp_api_version.rb'
+require_relative 'lib/amzn_sp_api/amzn_sp_api_version'
 
 Gem::Specification.new do |spec|
   spec.name = 'amzn_sp_api'
@@ -14,10 +14,10 @@ Gem::Specification.new do |spec|
 
   spec.metadata['homepage_uri'] = spec.homepage
 
-  spec.add_runtime_dependency 'aws-sdk-sts', '~> 1.9'
   spec.add_runtime_dependency 'aws-sigv4', '~> 1.5'
   spec.add_runtime_dependency 'json', '~> 2.6'
   spec.add_runtime_dependency 'typhoeus', '~> 1.4'
+
   spec.add_development_dependency 'rspec', '~> 3.0'
 
   # Specify which files should be added to the gem when it is released.
