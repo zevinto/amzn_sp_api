@@ -1,7 +1,7 @@
 Style/AsciiComments:
   Enabled: false
 Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
+  EnforcedStyle: false
 Style/Documentation:
   Enabled: false
 Style/EmptyElse:
@@ -17,4 +17,6 @@ Layout/LineLength:
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 Metrics/AbcSize:
+  Enabled: false
+Style/FrozenStringLiteralComment:
   Enabled: false
