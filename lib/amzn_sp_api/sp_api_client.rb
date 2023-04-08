@@ -5,6 +5,7 @@ require 'amzn_sp_api/api_client'
 
 module AmznSpApi
   class SpApiClient < ApiClient
+
     def initialize(config = SpApiConfiguration.default)
       super(config)
     end
@@ -38,17 +39,15 @@ module AmznSpApi
       new_access_token.config = config.dup
       new_access_token.config.host = 'api.amazon.com'
 
-      data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token',
-                                                                   header_params: {
-                                                                     'Content-Type' => 'application/x-www-form-urlencoded'
-                                                                   },
-                                                                   form_params: {
-                                                                     grant_type: 'refresh_token',
-                                                                     refresh_token: config.refresh_token,
-                                                                     client_id: config.client_id,
-                                                                     client_secret: config.client_secret
-                                                                   },
-                                                                   return_type: 'Object')
+      header_params = { 'Content-Type' => 'application/x-www-form-urlencoded' }
+      form_params = {
+        grant_type: 'refresh_token',
+        refresh_token: config.refresh_token,
+        client_id: config.client_id,
+        client_secret: config.client_secret
+      }
+      data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token', header_params: header_params,
+                                                                   form_params: form_params, return_type: 'Object')
 
       unless data && data[:access_token]
         raise ApiError.new(code: status_code, response_headers: headers, response_body: data)
@@ -74,11 +73,7 @@ module AmznSpApi
     end
 
     def auth_headers(http_method, url, body)
-      signed_request_headers(http_method, url, body).merge(
-        {
-          'x-amz-access-token' => retrieve_lwa_access_token
-        }
-      )
+      signed_request_headers(http_method, url, body).merge({ 'x-amz-access-token' => retrieve_lwa_access_token })
     end
   end
 end

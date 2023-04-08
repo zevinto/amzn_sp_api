@@ -45,8 +45,7 @@ module AmznSpApi
     def region=(region)
       @region = region
       unless aws_region
-        raise ApiError,
-              "#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(', ')}"
+        raise ApiError, "#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(', ')}"
       end
 
       self.host = "#{sandbox ? 'sandbox.' : ''}sellingpartnerapi-#{region}.amazon.com"

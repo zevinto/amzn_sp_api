@@ -14,17 +14,12 @@ AllCops:
 Style/AndOr:
   Enabled: true
 
-
-
 # Align `when` with `case`.
 Layout/CaseIndentation:
   Enabled: true
 
 # Align comments with method definitions.
 Layout/CommentIndentation:
-  Enabled: true
-
-Layout/ElseAlignment:
   Enabled: true
 
 Layout/EmptyLineAfterMagicComment:
@@ -52,11 +47,6 @@ Style/HashSyntax:
 # Method definitions after `private` or `protected` isolated calls need one
 # extra level of indentation.
 Layout/IndentationConsistency:
-  Enabled: true
-  
-
-# Two spaces, no tabs (for indentation).
-Layout/IndentationWidth:
   Enabled: true
 
 Layout/LeadingCommentSpace:
@@ -167,4 +157,10 @@ Layout/LineLength:
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 Metrics/AbcSize:
+  Enabled: false
+Layout/IndentationWidth:
+  Enabled: false
+Layout/ElseAlignment:
+  Enabled: false
+Layout/EndAlignmen:
   Enabled: false
