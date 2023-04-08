@@ -5,27 +5,27 @@ class ArrayMapObject < Petstore::Category
 
   def self.attribute_map
     {
-      :int_arr => :int_arr,
-      :pet_arr => :pet_arr,
-      :int_map => :int_map,
-      :pet_map => :pet_map,
-      :int_arr_map => :int_arr_map,
-      :pet_arr_map => :pet_arr_map,
-      :boolean_true_arr  => :boolean_true_arr,
-      :boolean_false_arr => :boolean_false_arr,
+      int_arr: :int_arr,
+      pet_arr: :pet_arr,
+      int_map: :int_map,
+      pet_map: :pet_map,
+      int_arr_map: :int_arr_map,
+      pet_arr_map: :pet_arr_map,
+      boolean_true_arr: :boolean_true_arr,
+      boolean_false_arr: :boolean_false_arr
     }
   end
 
   def self.swagger_types
     {
-      :int_arr => :'Array<Integer>',
-      :pet_arr => :'Array<Pet>',
-      :int_map => :'Hash<String, Integer>',
-      :pet_map => :'Hash<String, Pet>',
-      :int_arr_map => :'Hash<String, Array<Integer>>',
-      :pet_arr_map => :'Hash<String, Array<Pet>>',
-      :boolean_true_arr  => :'Array<BOOLEAN>',
-      :boolean_false_arr => :'Array<BOOLEAN>',
+      int_arr: :'Array<Integer>',
+      pet_arr: :'Array<Pet>',
+      int_map: :'Hash<String, Integer>',
+      pet_map: :'Hash<String, Pet>',
+      int_arr_map: :'Hash<String, Array<Integer>>',
+      pet_arr_map: :'Hash<String, Array<Pet>>',
+      boolean_true_arr: :'Array<BOOLEAN>',
+      boolean_false_arr: :'Array<BOOLEAN>'
     }
   end
 end
@@ -45,14 +45,13 @@ describe 'BaseObject' do
 
     let(:data) do
       { int_arr: [123, 456],
-       pet_arr: [{ name: 'Kitty' }],
-       int_map: { 'int' => 123 },
-       pet_map: { 'pet' => { name: 'Kitty' } },
-       int_arr_map: { 'int_arr' => [123, 456] },
-       pet_arr_map: { 'pet_arr' => [{ name: 'Kitty' }] },
-       boolean_true_arr:  [true, "true", "TruE", 1, "y", "yes", "1", "t", "T"],
-       boolean_false_arr: [false, "", 0, "0", "f", nil, "null"],
-      }
+        pet_arr: [{ name: 'Kitty' }],
+        int_map: { 'int' => 123 },
+        pet_map: { 'pet' => { name: 'Kitty' } },
+        int_arr_map: { 'int_arr' => [123, 456] },
+        pet_arr_map: { 'pet_arr' => [{ name: 'Kitty' }] },
+        boolean_true_arr: [true, 'true', 'TruE', 1, 'y', 'yes', '1', 't', 'T'],
+        boolean_false_arr: [false, '', 0, '0', 'f', nil, 'null'] }
     end
 
     it 'works for #build_from_hash' do

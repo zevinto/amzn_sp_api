@@ -20,7 +20,8 @@ module AmznSpApi
     def inflate_document(body, document_response)
       compression = document_response.compression_algorithm
       return body unless compression
-      raise AmzSpApi::ApiError.new("unknown compressionAlgorithm #{compression}") if compression != "GZIP"
+      raise AmzSpApi::ApiError, "unknown compressionAlgorithm #{compression}" if compression != 'GZIP'
+
       Zlib.gunzip(body)
     end
   end

@@ -1,4 +1,4 @@
-require_relative 'lib/amzn_sp_api/amzn_sp_api_version.rb'
+require_relative 'lib/amzn_sp_api/amzn_sp_api_version'
 
 Gem::Specification.new do |spec|
   spec.name = 'amzn_sp_api'

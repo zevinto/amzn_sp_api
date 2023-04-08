@@ -5,7 +5,6 @@ require 'amzn_sp_api/api_client'
 
 module AmznSpApi
   class SpApiClient < ApiClient
-
     def initialize(config = SpApiConfiguration.default)
       super(config)
     end
@@ -47,11 +46,9 @@ module AmznSpApi
         client_secret: config.client_secret
       }
       data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token', header_params: header_params,
-                                                                   form_params: form_params, return_type: 'Object')
+                                                                                            form_params: form_params, return_type: 'Object')
 
-      unless data && data[:access_token]
-        raise ApiError.new(code: status_code, response_headers: headers, response_body: data)
-      end
+      raise ApiError.new(code: status_code, response_headers: headers, response_body: data) unless data && data[:access_token]
 
       data
     end

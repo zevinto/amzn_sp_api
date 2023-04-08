@@ -109,7 +109,7 @@ module AmznSpApi
     def build_request_body(header_params, form_params, body)
       # http form
       if header_params['Content-Type'] == 'application/x-www-form-urlencoded' ||
-        header_params['Content-Type'] == 'multipart/form-data'
+         header_params['Content-Type'] == 'multipart/form-data'
         data = {}
         form_params.each do |key, value|
           data[key] = case value
@@ -164,11 +164,9 @@ module AmznSpApi
       begin
         data = JSON.parse("[#{body}]", symbolize_names: true)[0]
       rescue JSON::ParserError => e
-        if %w[String Date DateTime].include?(return_type)
-          data = body
-        else
-          raise e
-        end
+        raise e unless %w[String Date DateTime].include?(return_type)
+
+        data = body
       end
 
       convert_to_type data, return_type
