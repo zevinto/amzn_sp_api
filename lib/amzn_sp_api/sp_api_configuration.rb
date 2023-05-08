@@ -43,10 +43,7 @@ module AmznSpApi
     attr_accessor :get_access_token
 
     # from https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api#step-1-request-a-login-with-amazon-access-token
-    SCOPE = {
-      'client_credentials' => 'sellingpartnerapi::notifications',
-      'refresh_token' => 'sellingpartnerapi::migration'
-    }.freeze
+    SCOPE = %w[sellingpartnerapi::notifications sellingpartnerapi::migration]
 
     # from https://developer-docs.amazon.com/sp-api/docs/sp-api-endpoints
     AWS_REGION_MAP = {

@@ -39,16 +39,19 @@ module AmznSpApi
       new_access_token.config.host = 'api.amazon.com'
 
       header_params = { 'Content-Type' => 'application/x-www-form-urlencoded' }
-      grant_type = config.scope.present? ? 'client_credentials' : 'refresh_token'
       form_params = {
-        grant_type: grant_type,
+        grant_type: config.grant_type,
         refresh_token: config.refresh_token,
         client_id: config.client_id,
         client_secret: config.client_secret,
         scope: config.scope
       }
-      data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token', header_params: header_params,
-                                                                                            form_params: form_params, return_type: 'Object')
+      scope = config.grant_type == 'client_credentials' ? AmznSpApi::SpApiConfiguration::SCOPE : nil
+      form_params.merge!(scope: scope) if scope
+      data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token',
+                                                                   header_params: header_params,
+                                                                   form_params: form_params,
+                                                                   return_type: 'Object')
 
       raise ApiError.new(code: status_code, response_headers: headers, response_body: data) unless data && data[:access_token]
 
