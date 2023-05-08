@@ -1,9 +1,20 @@
 require 'amzn_sp_api/configuration'
 
+# from https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api
 module AmznSpApi
   class SpApiConfiguration < Configuration
+    # The type of access grant requested.
+    # @values: refresh_token Use this for calling operations that require authorization from a selling partner. All operations that are not grantless operations require authorization from a selling partner. When specifying this value, include the refresh_token parameter.
+    # @values: client_credentials Use this for calling grantless operations. When specifying this value, include the parameter.scope
+    attr_accessor :grant_type
+
     # The LWA refresh token.
     attr_accessor :refresh_token
+
+    # The scope of the LWA authorization grant.
+    # @values: sellingpartnerapi::notifications. For the Notifications API.
+    # @values: sellingpartnerapi::migration. For the Authorization API.
+    attr_accessor :scope
 
     # The LWA client identifier.
     attr_accessor :client_id
@@ -30,6 +41,12 @@ module AmznSpApi
     attr_accessor :save_access_token
 
     attr_accessor :get_access_token
+
+    # from https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api#step-1-request-a-login-with-amazon-access-token
+    SCOPE = {
+      'refresh_token' => 'sellingpartnerapi::notifications',
+      'client_credentials' => 'sellingpartnerapi::migration'
+    }.freeze
 
     # from https://developer-docs.amazon.com/sp-api/docs/sp-api-endpoints
     AWS_REGION_MAP = {

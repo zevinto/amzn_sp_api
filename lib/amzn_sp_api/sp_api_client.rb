@@ -39,11 +39,13 @@ module AmznSpApi
       new_access_token.config.host = 'api.amazon.com'
 
       header_params = { 'Content-Type' => 'application/x-www-form-urlencoded' }
+      grant_type = config.scope.present? ? 'client_credentials' : 'refresh_token'
       form_params = {
-        grant_type: 'refresh_token',
+        grant_type: grant_type,
         refresh_token: config.refresh_token,
         client_id: config.client_id,
-        client_secret: config.client_secret
+        client_secret: config.client_secret,
+        scope: config.scope
       }
       data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token', header_params: header_params,
                                                                                             form_params: form_params, return_type: 'Object')
