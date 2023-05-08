@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    amzn_sp_api (1.0.3)
+    amzn_sp_api (1.0.4)
       aws-sigv4 (~> 1.5)
       json (~> 2.6)
       typhoeus (~> 1.4)

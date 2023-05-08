@@ -43,8 +43,7 @@ module AmznSpApi
         grant_type: config.grant_type,
         refresh_token: config.refresh_token,
         client_id: config.client_id,
-        client_secret: config.client_secret,
-        scope: config.scope
+        client_secret: config.client_secret
       }
       scope = config.grant_type == 'client_credentials' ? AmznSpApi::SpApiConfiguration::SCOPE : nil
       form_params.merge!(scope: scope) if scope
