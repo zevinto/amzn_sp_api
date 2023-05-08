@@ -45,7 +45,7 @@ module AmznSpApi
         client_id: config.client_id,
         client_secret: config.client_secret
       }
-      scope = config.grant_type == 'client_credentials' ? AmznSpApi::SpApiConfiguration::SCOPE : nil
+      scope = config.grant_type == 'client_credentials' ? AmznSpApi::SpApiConfiguration::SCOPE.join(' ') : nil
       form_params.merge!(scope: scope) if scope
       data, status_code, headers = new_access_token.super_call_api(:POST, '/auth/o2/token',
                                                                    header_params: header_params,
