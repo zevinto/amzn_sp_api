@@ -44,8 +44,8 @@ module AmznSpApi
 
     # from https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api#step-1-request-a-login-with-amazon-access-token
     SCOPE = {
-      'refresh_token' => 'sellingpartnerapi::notifications',
-      'client_credentials' => 'sellingpartnerapi::migration'
+      'client_credentials' => 'sellingpartnerapi::notifications',
+      'refresh_token' => 'sellingpartnerapi::migration'
     }.freeze
 
     # from https://developer-docs.amazon.com/sp-api/docs/sp-api-endpoints
