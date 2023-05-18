@@ -48,7 +48,7 @@ module AmznSpApi
     # from https://developer-docs.amazon.com/sp-api/docs/sp-api-endpoints
     AWS_REGION_MAP = {
       'na' => 'us-east-1',
-      'eu' => 'en_west-1',
+      'eu' => 'eu-west-1',
       'fe' => 'us-west-2'
     }.freeze
 
